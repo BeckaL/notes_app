@@ -1,8 +1,6 @@
 const assert = (exp) => ({
-  toBe: function(assertionToCheck) {
-    if (exp === assertionToCheck) {
-      console.log("Test Passed")
-    } else {
+  toEqual: function(assertionToCheck) {
+    if (exp !== assertionToCheck) {
       console.log("Test Failed: Got "
                   + assertionToCheck
                   + " when expected to get "
@@ -14,10 +12,24 @@ const assert = (exp) => ({
 
 const expect = (exp) => assert(exp)
 
+const describe = (description, functionToExecute) => {
+  console.log(description)
+  functionToExecute()
+}
+
+const it = (testText, functionToExecute) => describe(' ' +testText, functionToExecute)
+
+
 function adder(a, b) {
   return a + b
 }
 
-const result1 = adder(1, 2)
-expect(result1).toBe(3)
-expect(result1).toBe(4)
+describe("adder", function() {
+  it ('adds two numbers', function() {
+    expect(adder(1,2)).toEqual(3)
+  })
+
+  it('adds a different two numbers', function() {
+    expect(adder(2,2)).toEqual(4)
+  })
+})
