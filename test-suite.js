@@ -2,9 +2,9 @@ const matchers = (exp) => ({
   toEqual: function(assertionToCheck) {
     if (exp !== assertionToCheck) {
       console.log("Test Failed: Got "
-                  + assertionToCheck
-                  + " when expected to get "
                   + exp
+                  + " when expected to get "
+                  + assertionToCheck
                 )} else {
                   console.log('Sweet!')
                 }
