@@ -1,5 +1,5 @@
-Note = function() {
-  this.text = "My favourite language is javascript"
+Note = function(note) {
+  this.text = note
 }
 
 Note.prototype.printText = function () {

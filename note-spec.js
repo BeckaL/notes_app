@@ -6,7 +6,7 @@ describe("notes", function() {
 
   describe('when initialized', function() {
     it ('takes the initialization text', function() {
-      var notes = new Note()
+      var notes = new Note("My favourite language is javascript")
       expect(notes.printText()).toEqual("My favourite language is javascript")
     })
   })
