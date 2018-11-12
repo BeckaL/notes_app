@@ -5,3 +5,7 @@ NoteList = function () {
 NoteList.prototype.add = function (note) {
   this.notes.push(note)
 };
+
+NoteList.prototype.all = function () {
+  return this.notes.join(', ')
+};
