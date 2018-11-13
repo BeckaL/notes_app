@@ -1,4 +1,4 @@
-require('./note-model.js')
+// require('./note-model.js')
 
 NoteList = function () {
   this.notes = []

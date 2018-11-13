@@ -20,6 +20,15 @@ const describe = (description, testFunction) => {
 
 const it = (checks, testFunction) => describe(' ' + checks, testFunction)
 
+const allow = (doubleName) => ({
+  toReceive: function(fakeMethod) {
+    doubleName = function() {
+    }
+    doubleName.prototype.new = function() {
+    }
+  }
+})
+
 module.exports = {
   describe,
   it,
