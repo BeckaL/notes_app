@@ -1,7 +1,11 @@
-Note = function(note) {
-  this.text = note
-}
+(function(exports) {
+  Note = function(note) {
+    this.text = note
+  }
 
-Note.prototype.printText = function () {
-  return this.text
-}
+  Note.prototype.printText = function () {
+    return this.text
+  };
+  exports.Note = Note;
+
+})(this);

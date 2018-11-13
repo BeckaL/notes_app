@@ -1,28 +1,39 @@
-const matchers = (exp) => ({
-  toEqual: function(assertionToCheck) {
-    if (exp !== assertionToCheck) {
-      console.log("Test Failed: Got "
-                  + exp
-                  + " when expected to get "
-                  + assertionToCheck
-                )} else {
-                  console.log('Sweet!')
-                }
+(function(exports) {
+
+  matchers = (exp) => ({
+    toEqual: function(assertionToCheck) {
+      if (exp !== assertionToCheck) {
+        console.log("Test Failed: Got "
+                    + exp
+                    + " when expected to get "
+                    + assertionToCheck
+                  )} else {
+                    console.log('Sweet!')
+                  }
+    }
+  })
+
+  expect = (exp) => matchers(exp)
+
+  describe = (description, testFunction) => {
+    console.log(description)
+    testFunction()
   }
-})
 
-const expect = (exp) => matchers(exp)
+  it = (checks, testFunction) => describe(' ' + checks, testFunction)
 
-const describe = (description, testFunction) => {
-  console.log(description)
-  testFunction()
-}
+  return {
+  exports.expect: expect
+  exports.describe: describe
+  exports.it: it
+ }
 
-const it = (checks, testFunction) => describe(' ' + checks, testFunction)
+})(this);
 
-module.exports = {
-  describe,
-  it,
-  expect,
-  matchers
-}
+//
+// module.exports = {
+//   describe,
+//   it,
+//   expect,
+//   matchers
+// }

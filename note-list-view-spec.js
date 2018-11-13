@@ -1,8 +1,8 @@
-require('./note-list-model.js')
-require('./note-model.js')
-require('./note-list-view-model.js')
+// require('./note-list-model.js')
+// require('./note-model.js')
+// require('./note-list-view-model.js')
 
-const { describe, it, expect, matchers } = require('./test-suite.js')
+// const { describe, it, expect, matchers } = require('./test-suite.js')
 
 describe('Note-list-view', function() {
   describe("toHTML", function() {
