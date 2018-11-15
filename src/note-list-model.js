@@ -12,5 +12,9 @@
   NoteList.prototype.all = function () {
     return this.notes.map(note => note.printText()).join(', ')
   }
+
+  NoteList.prototype.getbyid = function (id) {
+    return this.notes[id].text
+  };
   exports.NoteList = NoteList
 })(this)

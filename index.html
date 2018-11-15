@@ -1,7 +1,16 @@
 <body>
-  <div id="app">Hello</div>
+  <div id="app"></div>
+  <div id="noteText"></div>
 </body>
 <script src='./src/note-controller.js'></script>
 <script src='./src/note-model.js'></script>
 <script src='./src/note-list-model.js'></script>
 <script src='./src/note-list-view-model.js'></script>
+
+<script>
+  nl = new NoteList()
+  nc = new NoteController(nl)
+  nc.addNote('first note')
+  nc.addNote('second note - a longer bit of text here')
+  nc.urlChange()
+</script>

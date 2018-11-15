@@ -7,12 +7,16 @@
   }
 
   NoteListView.prototype.toHTML = function () {
-    var string = this.noteList.all()
-    if (string.length > MAX_CHARS) {
-      string = string.split('').splice(0, MAX_CHARS).join('')
-    }
-    // console.log(trimmed_string || string)
-    return `<ul><li><div>${string}</div></li></ul>`
+    var notes = this.noteList.notes
+    returnString = '<ul>'
+    notes.forEach(note => {
+      text = note.printText()
+      if (text.length > MAX_CHARS) {
+        text = text.split('').splice(0, MAX_CHARS).join('')
+      }
+      returnString += `<li><a href="#notes/${note.id}">${text}</a></li>`
+    })
+    return returnString + '</ul>'
   };
 
   exports.NoteListView = NoteListView
