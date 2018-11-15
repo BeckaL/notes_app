@@ -31,4 +31,5 @@ describe('Note-list-view', function() {
         expect(noteListView.toHTML()).toEqual('<ul><li><div>Hi, this one is a lo</div></li></ul>')
     })
   })
+  
 })
