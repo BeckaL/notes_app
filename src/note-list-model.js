@@ -5,7 +5,7 @@
   }
 
   NoteList.prototype.add = function (string) {
-    var note = new Note(string)
+    var note = new Note(string, this.notes.length)
     this.notes.push(note)
   };
 
