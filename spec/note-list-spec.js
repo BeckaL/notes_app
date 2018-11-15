@@ -1,6 +1,6 @@
-require('./note-list-model.js')
-require('./note-model.js')
-const { describe, it, expect, matchers } = require('./test-suite.js')
+require('../src/note-list-model.js')
+require('../src/note-model.js')
+const { describe, it, expect, matchers } = require('../test-suite.js')
 
 describe('Note-list', function() {
   describe("add", function() {
